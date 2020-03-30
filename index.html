@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<head>
+  <title>Vue Form</title>
+  <script src="vue.js"></script>
+</head>
+<body>
+
+<form id="app" @submit="checkForm" action="" method="post" novalidate=true>
+
+  <p v-if="errors.length">
+    <b>Please correct the following error(s):</b>
+    <ul>
+      <li v-for="error in errors">{{ error }}</li>
+    </ul> 
+  </p>
+
+  <p>
+    <label for="name">Name</label>
+    <input id="name" v-model="name" type="text" name="name" placeholder="Enter name" >
+  </p>
+
+  <p>
+    <label for="age">Age</label>
+    <input id="age" v-model="age" type="number" name="age" min="0"  max="55" placeholder="Enter age">
+  </p>
+
+  <p>
+      <label for="email">Email</label>
+<input id="email" v-model="email" type="email" name="email" placeholder="Please enter email">
+</p>
+    </p>
+  <p>
+    <label for="movie">Favorite Movie</label>
+    <select id="movie" v-model="movie" name="movie">
+      <option>Star Wars</option>
+      <option>Stranger Things</option>
+      <option>Vampire Dairies</option>
+      <option>Fast and Furious</option>
+    </select>
+  </p>
+
+  <p>
+    <input type="submit" value="Submit" />
+  </p>
+</form>
+</body>
+
+</html> 
+<script src="script.js"></script>
